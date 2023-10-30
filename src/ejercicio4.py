@@ -3,9 +3,9 @@ Lee la documentación de este método en: * Métodos en ingles * Métodos
 en castellano y escribe el código necesario para invocar a este método y
 contar el número de veces que una letra aparece en “banana”."""
 
-def cuenta(cadena:str, letra:str)-> int:
+def cuentaCount(cadena:str, letra:str)-> int:
     """Función que devuelve el número de la cantidad
-     total de una letra seleccionada en una cadena recibida."""
+     total de una letra seleccionada en una cadena recibida con Count."""
 
     LetrasRepetidas = cadena.count(letra)
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
             EntradaEscrita = True
 
-            sucesion = cuenta(entradaCadena,entradaLetra)
+            sucesion = cuentaCount(entradaCadena, entradaLetra)
 
 
         except ValueError:  # Si está en blanco.

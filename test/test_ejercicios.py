@@ -1,64 +1,50 @@
 import pytest
-from src.ejercicio1 import sucesionEdad
-from src.ejercicio2 import sucesionNumeroImpar
+from src.ejercicio1 import darVueltaCadena
 from src.ejercicio3 import cuenta
+from src.ejercicio4 import cuentaCount
 
+"""from src.ejercicio4 import cuenta"""
 
 
 #Ejercicio 1
 
 
 @pytest.mark.parametrize(
-    "edad, sucesion",
+    "cadena, sucesion",
     [
-        (2, "1,2,"),
-        (4, "1,2,3,4,"),
-        (7, "1,2,3,4,5,6,7,")
+        ("Holaa", "a\na\nl\no\nH\n"),
+        ("ePepA", "A\np\ne\nP\ne\n")
     ]
 )
-def test_sucesionEdad(edad,sucesion):
-    assert sucesionEdad(edad) == sucesion
-
-
-def test_sucesionEdadExepciones():
-    with pytest.raises(ValueError):
-        sucesionEdad(-2)
-
-
-#Ejercicio 2
-
-
-@pytest.mark.parametrize(
-    "numero, sucesion",
-    [
-        (2, "1,"),
-        (9, "1,3,5,7,9,"),
-        (15, "1,3,5,7,9,11,13,15,")
-    ]
-)
-def test_sucesionNumeroImpar(numero,sucesion):
-    assert sucesionNumeroImpar(numero) == sucesion
-
-
-
-def test_sucesionNumeroImparExepciones():
-    with pytest.raises(ValueError):
-        sucesionNumeroImpar(-2)
+def test_darVueltaCadena(cadena,sucesion):
+    assert darVueltaCadena(cadena) == sucesion
 
 
 #Ejercicio 3
 
+
 @pytest.mark.parametrize(
-    "numero, sucesion",
+    "cadena, letra, sucesion",
     [
-        (2, "2,1,0,"),
-        (9, "9,8,7,6,5,4,3,2,1,0,"),
-        (1, "1,0,")
+        ("holaaa", "a", 3),
+        ("peeeppeeasdp", "p", 4),
+        ("Meroasdp", "h", 0)
     ]
 )
-def test_numerosConsecutivosInversos(numero,sucesion):
-    assert cuenta(numero) == sucesion
+def test_cuenta(cadena, letra, sucesion):
+    assert cuenta(cadena, letra) == sucesion
 
-def test_numerosConsecutivosInversosExepciones():
-    with pytest.raises(ValueError):
-        cuenta(-2)
+
+#Ejercicio 4
+
+
+@pytest.mark.parametrize(
+    "cadena, letra, sucesion",
+    [
+        ("holaaa", "a", 3),
+        ("peeeppeeasdp", "p", 4),
+        ("Meroasdp", "h", 0)
+    ]
+)
+def test_cuentaCount(cadena, letra, sucesion):
+    assert cuentaCount(cadena, letra) == sucesion

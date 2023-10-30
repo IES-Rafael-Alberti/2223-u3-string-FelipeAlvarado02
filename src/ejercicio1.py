@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
         except ValueError:  # Si está en blanco.
 
-            if entradaCadena.isspace():
+            if entradaCadena.isspace() or entradaCadena == "":
                 print("Por favor introduzca un escrito que no esté en blanco.\n")
 
 
